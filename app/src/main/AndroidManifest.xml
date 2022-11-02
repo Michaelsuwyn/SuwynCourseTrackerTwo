@@ -13,10 +13,19 @@
         android:theme="@style/Theme.SuwynCourseTracker"
         tools:targetApi="31">
         <activity
+            android:name=".UI.AllCourseDetail"
+            android:exported="false"
+            android:parentActivityName=".UI.AllCourseList"
+            android:label="Course">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".UI.AllCourseList"
             android:exported="false"
-            android:parentActivityName=".UI.MainActivity"
-            android:label="Courses">
+            android:label="Courses"
+            android:parentActivityName=".UI.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -40,8 +49,8 @@
         <activity
             android:name=".UI.AssessmentList"
             android:exported="false"
-            android:parentActivityName=".UI.MainActivity"
-            android:label="Assessments">
+            android:label="Assessments"
+            android:parentActivityName=".UI.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

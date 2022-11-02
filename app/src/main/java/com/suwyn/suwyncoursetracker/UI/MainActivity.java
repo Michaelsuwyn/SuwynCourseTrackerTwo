@@ -18,11 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    public void enterHere(View view) {
-        Intent intent = new Intent(MainActivity.this, TermList.class);
-        startActivity(intent);
         Repository repo = new Repository(getApplication());
         Term term = new Term(1, "Test Term One", "10/31/2022", "04/31/2022");
         Term termTwo = new Term(2, "Test Term Two", "10/31/2022", "04/31/2022");
@@ -34,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         repo.insert(term);
         repo.insert(termTwo);
         repo.insert(course);
+        repo.insert(course2);
+        repo.insert(course3);
+        repo.insert(assessment1);
+        repo.insert(assessment2);
+    }
+
+    public void enterHere(View view) {
+        Intent intent = new Intent(MainActivity.this, TermList.class);
+        startActivity(intent);
     }
 
     public void viewCourses(View view) {
