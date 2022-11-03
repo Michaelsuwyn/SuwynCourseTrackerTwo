@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.suwyn.suwyncoursetracker.Database.Repository;
+import com.suwyn.suwyncoursetracker.Entity.Course;
 import com.suwyn.suwyncoursetracker.Entity.Term;
 import com.suwyn.suwyncoursetracker.R;
 
@@ -30,6 +31,7 @@ public class TermList extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setTerms(terms);
+
     }
         public boolean onCreateOptionsMenu(Menu menu){
 

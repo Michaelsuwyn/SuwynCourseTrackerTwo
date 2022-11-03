@@ -25,7 +25,7 @@
             android:name=".UI.AllCourseList"
             android:exported="false"
             android:label="Courses"
-            android:parentActivityName=".UI.MainActivity">
+            android:parentActivityName=".UI.TermList">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

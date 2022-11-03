@@ -3,6 +3,7 @@ package com.suwyn.suwyncoursetracker.UI;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -80,5 +81,7 @@ public class AllCourseDetail extends AppCompatActivity {
             course = new Course(courseId, editCourseName.getText().toString(), editCourseStart.getText().toString(), editCourseEnd.getText().toString(), editStatus.getText().toString(), editInsName.getText().toString(), editInsEmail.getText().toString(), editInsPhone.getText().toString(), editNote.getText().toString(), Integer.parseInt(editTermID.getText().toString()));
             repository.update(course);
         }
+        Intent intent = new Intent(AllCourseDetail.this, AllCourseList.class);
+        startActivity(intent);
     }
 }

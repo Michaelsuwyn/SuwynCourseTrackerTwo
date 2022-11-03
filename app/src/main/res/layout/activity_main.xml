@@ -31,29 +31,21 @@
         app:srcCompat="@drawable/ic_baseline_school_24" />
 
     <Button
-        android:id="@+id/viewCourses"
+        android:id="@+id/alertNotify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="viewCourses"
-        android:text="View Courses"
+        android:onClick="toAlertNotify"
+        android:text="Alerts and Notifications"
         app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/viewAssessments"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="viewAssessments"
-        android:text="View Assessments"
-        app:layout_constraintTop_toBottomOf="@+id/viewCourses" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="124dp"
         android:onClick="enterHere"
         android:text="View Terms"
         app:layout_constraintTop_toBottomOf="@+id/welcomeImage"
-        tools:layout_editor_absoluteX="-16dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

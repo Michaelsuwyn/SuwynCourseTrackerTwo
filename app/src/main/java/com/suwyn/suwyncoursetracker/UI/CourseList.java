@@ -2,6 +2,7 @@ package com.suwyn.suwyncoursetracker.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ public class CourseList extends AppCompatActivity {
     String endDate;
     int termId;
     Repository repository;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,5 +52,14 @@ public class CourseList extends AppCompatActivity {
             term = new Term(termId, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
             repository.update(term);
         }
+
+        Intent intent = new Intent(CourseList.this, TermList.class);
+        startActivity(intent);
+    }
+
+    public void relatedCourses(View view) {
+        MainActivity.mainTermID = termId;
+        Intent intent = new Intent(CourseList.this, AllCourseList.class);
+        startActivity(intent);
     }
 }
