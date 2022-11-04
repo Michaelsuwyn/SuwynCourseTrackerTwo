@@ -23,6 +23,8 @@ public class Repository {
     private List<Assessment> mAllAssessments;
     private List<Assessment> mCourseAssessments;
     private Assessment thisAssessment;
+    private Course thisCourse;
+    private Term thisTerm;
 
     private static int NUMBER_OF_THREADS = 6;
     static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
@@ -81,6 +83,18 @@ public class Repository {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+    }
+
+    public Term getSingleTerm(int id){
+        databaseExecutor.execute(()->{
+            thisTerm=mTermDAO.getSingleTerm(id);
+        });
+        try{
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return thisTerm;
     }
 
     //COURSE CRUD OPERATIONS ---------------------------------------------------
@@ -146,6 +160,19 @@ public class Repository {
         }
     }
 
+    //Function to return Course by ID
+    public Course getSingleCourse(int id){
+        databaseExecutor.execute(()->{
+            thisCourse=mCourseDAO.getSingleCourse(id);
+        });
+        try{
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return thisCourse;
+    }
+
     //ASSESSMENT CRUD OPERATIONS ----------------------------------------------
     //Function to create Assessment
     public void insert(Assessment assessment){
@@ -209,6 +236,7 @@ public class Repository {
         return  mCourseAssessments;
     }
 
+    //Queries the assessment table for assessment by ID
     public Assessment getSingleAssessment(int id){
         databaseExecutor.execute(()->{
             thisAssessment=mAssessmentDAO.getSingleAssessment(id);

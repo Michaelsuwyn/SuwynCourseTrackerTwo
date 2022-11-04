@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.suwyn.suwyncoursetracker.Database.Repository;
+import com.suwyn.suwyncoursetracker.Entity.Assessment;
 import com.suwyn.suwyncoursetracker.Entity.Course;
 import com.suwyn.suwyncoursetracker.R;
 
@@ -92,5 +93,10 @@ public class AllCourseDetail extends AppCompatActivity {
     }
 
     public void deleteCourse(View view) {
+        Course toDelete = repository.getSingleCourse(courseId);
+        repository.delete(toDelete);
+        Intent intent = new Intent(AllCourseDetail.this, AllCourseList.class);
+        startActivity(intent);
     }
+
 }

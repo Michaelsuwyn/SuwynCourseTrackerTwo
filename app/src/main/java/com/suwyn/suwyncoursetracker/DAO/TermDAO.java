@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.suwyn.suwyncoursetracker.Entity.Course;
 import com.suwyn.suwyncoursetracker.Entity.Term;
 
 import java.util.List;
@@ -24,4 +25,7 @@ public interface TermDAO {
 
     @Query("SELECT * FROM terms ORDER BY termID ASC")
     List<Term> getAllTerms();
+
+    @Query("SELECT * FROM terms WHERE termID = :id")
+    Term getSingleTerm(int id);
 }

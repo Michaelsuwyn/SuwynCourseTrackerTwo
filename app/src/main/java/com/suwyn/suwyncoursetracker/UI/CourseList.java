@@ -6,10 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.suwyn.suwyncoursetracker.Database.Repository;
+import com.suwyn.suwyncoursetracker.Entity.Assessment;
+import com.suwyn.suwyncoursetracker.Entity.Course;
 import com.suwyn.suwyncoursetracker.Entity.Term;
 import com.suwyn.suwyncoursetracker.R;
+
+import java.util.List;
 
 public class CourseList extends AppCompatActivity {
 
@@ -64,5 +69,16 @@ public class CourseList extends AppCompatActivity {
     }
 
     public void deleteTerm(View view) {
+        List<Course> courses = repository.getCoursesByTermID(termId);
+        if(courses.size() > 0){
+            Toast errorToast = Toast.makeText(CourseList.this, "You cannot delete Term until all courses are removed.", Toast.LENGTH_LONG);
+            errorToast.show();
+        }
+        else {
+            Term toDelete = repository.getSingleTerm(termId);
+            repository.delete(toDelete);
+            Intent intent = new Intent(CourseList.this, TermList.class);
+            startActivity(intent);
+        }
     }
 }
