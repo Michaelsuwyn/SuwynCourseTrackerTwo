@@ -7,25 +7,26 @@
     tools:context=".UI.AssessmentDetail">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Assessment Name">
-            </TextView>
+                android:text="Assessment Name"></TextView>
+
             <EditText
                 android:id="@+id/editName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Assessment Name">
-            </EditText>
+                android:hint="Assessment Name"></EditText>
 
         </LinearLayout>
 
@@ -33,17 +34,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Assessment Type">
-            </TextView>
+                android:text="Assessment Type"></TextView>
+
             <EditText
                 android:id="@+id/editType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Objective or Performance">
-            </EditText>
+                android:hint="Objective or Performance"></EditText>
 
         </LinearLayout>
 
@@ -51,46 +52,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Description">
-            </TextView>
+                android:text="Description"></TextView>
+
             <EditText
                 android:id="@+id/editDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Description">
-            </EditText>
+                android:hint="Description"></EditText>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course ID">
-            </TextView>
+                android:text="Course ID"></TextView>
+
             <EditText
                 android:id="@+id/editCourseID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Course ID">
-            </EditText>
+                android:hint="Course ID"></EditText>
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
             android:clickable="true"
-            android:onClick="saveAssessment">
+            android:onClick="saveAssessment"
+            android:text="Save">
 
         </Button>
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Delete Assessment"
+        android:clickable="true"
+        android:onClick="deleteAssessment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

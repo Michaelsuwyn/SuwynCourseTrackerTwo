@@ -59,4 +59,11 @@ public class AssessmentDetail extends AppCompatActivity {
         Intent intent = new Intent(AssessmentDetail.this, AssessmentList.class);
         startActivity(intent);
     }
+
+    public void deleteAssessment(View view) {
+        Assessment toDelete = repository.getSingleAssessment(assessmentID);
+        repository.delete(toDelete);
+        Intent intent = new Intent(AssessmentDetail.this, AssessmentList.class);
+        startActivity(intent);
+    }
 }

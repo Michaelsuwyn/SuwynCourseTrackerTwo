@@ -62,4 +62,7 @@ public class CourseList extends AppCompatActivity {
         Intent intent = new Intent(CourseList.this, AllCourseList.class);
         startActivity(intent);
     }
+
+    public void deleteTerm(View view) {
+    }
 }

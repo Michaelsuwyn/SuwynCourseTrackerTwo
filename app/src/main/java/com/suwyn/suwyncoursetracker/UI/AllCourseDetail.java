@@ -90,4 +90,7 @@ public class AllCourseDetail extends AppCompatActivity {
         Intent intent = new Intent(AllCourseDetail.this, AssessmentList.class);
         startActivity(intent);
     }
+
+    public void deleteCourse(View view) {
+    }
 }

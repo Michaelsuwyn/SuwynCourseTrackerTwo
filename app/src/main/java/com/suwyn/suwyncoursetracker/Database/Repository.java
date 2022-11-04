@@ -22,6 +22,7 @@ public class Repository {
     private List<Course> mTermCourses;
     private List<Assessment> mAllAssessments;
     private List<Assessment> mCourseAssessments;
+    private Assessment thisAssessment;
 
     private static int NUMBER_OF_THREADS = 6;
     static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
@@ -206,6 +207,18 @@ public class Repository {
             e.printStackTrace();
         }
         return  mCourseAssessments;
+    }
+
+    public Assessment getSingleAssessment(int id){
+        databaseExecutor.execute(()->{
+            thisAssessment=mAssessmentDAO.getSingleAssessment(id);
+        });
+        try{
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return thisAssessment;
     }
 
 }
