@@ -2,7 +2,6 @@ package com.suwyn.suwyncoursetracker.UI;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.suwyn.suwyncoursetracker.Entity.Assessment;
 import com.suwyn.suwyncoursetracker.Entity.Course;
 import com.suwyn.suwyncoursetracker.R;
 
@@ -67,7 +65,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         if(mCourses!=null){
             Course current = mCourses.get(position);
             String name = current.getTitle();
-            holder.courseItemView.setText(name);
+            String ID = Integer.toString(current.getCourseID());
+            holder.courseItemView.setText(ID + ": " + name);
         }
         else {
             holder.courseItemView.setText("No Course name");

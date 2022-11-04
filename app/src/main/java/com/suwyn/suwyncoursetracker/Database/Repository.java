@@ -21,8 +21,9 @@ public class Repository {
     private List<Course> mAllCourses;
     private List<Course> mTermCourses;
     private List<Assessment> mAllAssessments;
+    private List<Assessment> mCourseAssessments;
 
-    private static int NUMBER_OF_THREADS = 4;
+    private static int NUMBER_OF_THREADS = 6;
     static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     public Repository(Application application){
@@ -192,6 +193,19 @@ public class Repository {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+    }
+
+    //Function to Query Assessments by courseID
+    public List<Assessment> getAssessmentsByCourseID(int id){
+        databaseExecutor.execute(()-> {
+            mCourseAssessments=mAssessmentDAO.getAssessmentByCourseID(id);
+        });
+        try{
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return  mCourseAssessments;
     }
 
 }

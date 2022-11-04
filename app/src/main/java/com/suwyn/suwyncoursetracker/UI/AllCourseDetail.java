@@ -84,4 +84,10 @@ public class AllCourseDetail extends AppCompatActivity {
         Intent intent = new Intent(AllCourseDetail.this, AllCourseList.class);
         startActivity(intent);
     }
+
+    public void relatedAssessments(View view) {
+        MainActivity.mainCourseID = courseId;
+        Intent intent = new Intent(AllCourseDetail.this, AssessmentList.class);
+        startActivity(intent);
+    }
 }

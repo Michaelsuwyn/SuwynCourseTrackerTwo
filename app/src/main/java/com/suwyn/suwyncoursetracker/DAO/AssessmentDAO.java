@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.suwyn.suwyncoursetracker.Entity.Assessment;
+import com.suwyn.suwyncoursetracker.Entity.Course;
 import com.suwyn.suwyncoursetracker.Entity.Term;
 
 import java.util.List;
@@ -25,4 +26,7 @@ public interface AssessmentDAO {
 
     @Query("SELECT * FROM assessments ORDER BY assessmentID ASC")
     List<Assessment> getAllAssessments();
+
+    @Query("SELECT * FROM assessments WHERE courseID =:id ORDER BY assessmentID ASC")
+    List<Assessment> getAssessmentByCourseID(int id);
 }
