@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static int mainTermID;
     public static int mainCourseID;
+    public static int numAlert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
