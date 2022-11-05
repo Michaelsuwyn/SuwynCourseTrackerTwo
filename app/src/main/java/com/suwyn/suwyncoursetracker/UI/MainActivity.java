@@ -51,4 +51,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, AssessmentList.class);
         startActivity(intent);
     }
+
+    public void toAlertNotify(View view) {
+        Intent intent = new Intent(MainActivity.this, AlertAndNotify.class);
+        startActivity(intent);
+    }
 }
