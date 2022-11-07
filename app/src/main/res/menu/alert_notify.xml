@@ -5,7 +5,7 @@
     <item android:title="Share Note"
         android:orderInCategory="100"
         android:id="@+id/share"/>
-    <item android:title="Notify"
+    <item android:title="Alert"
         android:orderInCategory="100"
         android:id="@+id/notify"/>
 </menu>

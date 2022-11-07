@@ -21,21 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Repository repo = new Repository(getApplication());
-        Term term = new Term(1, "Test Term One", "10/31/2022", "04/31/2022");
-        Term termTwo = new Term(2, "Test Term Two", "10/31/2022", "04/31/2022");
-        Course course2 = new Course(2, "Course two", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 2);
-        Course course3 = new Course(3, "Course three", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
-        Course course = new Course(1, "Course One", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
-        Assessment assessment1 = new Assessment(1, "Performance", "PA1", "test", 1);
-        Assessment assessment2 = new Assessment(2, "Performance", "PA2", "test", 2);
-        repo.insert(term);
-        repo.insert(termTwo);
-        repo.insert(course);
-        repo.insert(course2);
-        repo.insert(course3);
-        repo.insert(assessment1);
-        repo.insert(assessment2);
+        populateData();
+
     }
 
     public void enterHere(View view) {
@@ -56,5 +43,23 @@ public class MainActivity extends AppCompatActivity {
     public void toAlertNotify(View view) {
         Intent intent = new Intent(MainActivity.this, AlertAndNotify.class);
         startActivity(intent);
+    }
+
+    public void populateData(){
+        Repository repo = new Repository(getApplication());
+        Term term = new Term(1, "Test Term One", "10/31/2022", "04/31/2022");
+        Term termTwo = new Term(2, "Test Term Two", "10/31/2022", "04/31/2022");
+        Course course = new Course(1, "Course One", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
+        Course course2 = new Course(2, "Course two", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 2);
+        Course course3 = new Course(3, "Course three", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
+        Assessment assessment1 = new Assessment(1, "Performance", "PA1", "test", "11/01/2022", "02/01/2023", 1);
+        Assessment assessment2 = new Assessment(2, "Performance", "PA2", "test", "11/01/2022", "02/01/2023", 2);
+        repo.insert(term);
+        repo.insert(termTwo);
+        repo.insert(course);
+        repo.insert(course2);
+        repo.insert(course3);
+        repo.insert(assessment1);
+        repo.insert(assessment2);
     }
 }

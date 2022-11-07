@@ -24,6 +24,7 @@ import java.util.Locale;
 
 public class AlertAndNotify extends AppCompatActivity {
     EditText editDate;
+    EditText editNote;
     DatePickerDialog.OnDateSetListener startDate;
     final Calendar myCalendarStart = Calendar.getInstance();
     String myFormat;
@@ -33,6 +34,7 @@ public class AlertAndNotify extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert_and_notify);
         editDate= findViewById(R.id.editDate);
+        editNote=findViewById(R.id.editAlertNotify);
         myFormat = "MM/dd/yy";
         sdf = new SimpleDateFormat(myFormat, Locale.US);
         editDate.setOnClickListener(new View.OnClickListener(){
@@ -81,8 +83,8 @@ public class AlertAndNotify extends AppCompatActivity {
             case R.id.share:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Text from note field");
-                sendIntent.putExtra(Intent.EXTRA_TITLE, "Message Title");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, editNote.getText().toString());
+                sendIntent.putExtra(Intent.EXTRA_TITLE, "Suwyn Scheduler Notification");
                 sendIntent.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
@@ -97,7 +99,7 @@ public class AlertAndNotify extends AppCompatActivity {
                 }
                 Long trigger =myDate.getTime();
                 Intent intent = new Intent(AlertAndNotify.this, MyReceiver.class);
-                intent.putExtra("key", "Message to send");
+                intent.putExtra("key", editNote.getText().toString());
                 PendingIntent sender = PendingIntent.getBroadcast(AlertAndNotify.this,MainActivity.numAlert++ ,intent, PendingIntent.FLAG_IMMUTABLE);
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);

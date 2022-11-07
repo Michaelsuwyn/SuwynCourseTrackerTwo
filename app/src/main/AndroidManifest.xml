@@ -71,7 +71,7 @@
             android:name=".UI.AssessmentList"
             android:exported="false"
             android:label="Assessments"
-            android:parentActivityName=".UI.AssessmentList">
+            android:parentActivityName=".UI.AllCourseList">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
