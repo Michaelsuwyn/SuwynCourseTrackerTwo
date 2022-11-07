@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.AllCourseDetail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Name"></TextView>
+
+            <EditText
+                android:id="@+id/editCourseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Course Name"></EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Start Date"></TextView>
+
+            <EditText
+                android:id="@+id/editCourseStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="MM/DD/YYYY"></EditText>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course End Date"></TextView>
+
+            <EditText
+                android:id="@+id/editCourseEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="MM/DD/YYYY"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Status"></TextView>
+
+            <EditText
+                android:id="@+id/editCourseStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="In Progress, Completed, dropped, plan to take"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor Name"></TextView>
+
+            <EditText
+                android:id="@+id/editInsName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="NAME"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor Email"></TextView>
+
+            <EditText
+                android:id="@+id/editInsEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="EMAIL"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor Phone"></TextView>
+
+            <EditText
+                android:id="@+id/editInsPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="PHONE"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Note"></TextView>
+
+            <EditText
+                android:id="@+id/editNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="NOTE"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Term ID"></TextView>
+
+            <EditText
+                android:id="@+id/editTermID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="TERM ID"></EditText>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="saveCourse"
+            android:text="Save">
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="relatedAssessments"
+            android:text="Assessments for this course">
+
+        </Button>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:text="Delete Course"
+            android:clickable="true"
+            android:onClick="deleteCourse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
