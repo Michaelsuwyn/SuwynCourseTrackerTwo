@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateData(){
         Repository repo = new Repository(getApplication());
-        Term term = new Term(1, "Test Term One", "10/31/2022", "04/31/2022");
-        Term termTwo = new Term(2, "Test Term Two", "10/31/2022", "04/31/2022");
-        Course course = new Course(1, "Course One", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
-        Course course2 = new Course(2, "Course two", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 2);
-        Course course3 = new Course(3, "Course three", "10/31/2022", "12/31/2022","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
-        Assessment assessment1 = new Assessment(1, "Performance", "PA1", "test", "11/01/2022", "02/01/2023", 1);
-        Assessment assessment2 = new Assessment(2, "Performance", "PA2", "test", "11/01/2022", "02/01/2023", 2);
+        Term term = new Term(1, "Test Term One", "10/31/22", "04/31/22");
+        Term termTwo = new Term(2, "Test Term Two", "10/31/22", "04/31/22");
+        Course course = new Course(1, "Course One", "10/31/22", "12/31/22","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
+        Course course2 = new Course(2, "Course two", "10/31/22", "12/31/22","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 2);
+        Course course3 = new Course(3, "Course three", "10/31/22", "12/31/22","In Progress","Test Instructor", "test@test.com", "4809999122", "Optional note", 1);
+        Assessment assessment1 = new Assessment(1, "Performance", "PA1", "test", "11/01/22", "02/01/23", 1);
+        Assessment assessment2 = new Assessment(2, "Performance", "PA2", "test", "11/01/22", "02/01/23", 2);
         repo.insert(term);
         repo.insert(termTwo);
         repo.insert(course);

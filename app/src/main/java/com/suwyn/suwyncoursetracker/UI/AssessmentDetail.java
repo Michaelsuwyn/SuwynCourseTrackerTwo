@@ -2,6 +2,9 @@ package com.suwyn.suwyncoursetracker.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +13,11 @@ import android.widget.EditText;
 import com.suwyn.suwyncoursetracker.Database.Repository;
 import com.suwyn.suwyncoursetracker.Entity.Assessment;
 import com.suwyn.suwyncoursetracker.R;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class AssessmentDetail extends AppCompatActivity {
 
@@ -27,6 +35,8 @@ public class AssessmentDetail extends AppCompatActivity {
     int assessmentID;
     int courseID;
     Repository repository;
+    String myFormat = "MM/dd/yy";
+    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,5 +90,39 @@ public class AssessmentDetail extends AppCompatActivity {
     public void setAlert(View view) {
         Intent intent = new Intent(AssessmentDetail.this, AlertAndNotify.class);
         startActivity(intent);
+    }
+
+    public boolean alertStart(View view) {
+        String dateFromScreen = editStartDate.getText().toString();
+        Date myDate = null;
+        try {
+            myDate=sdf.parse(dateFromScreen);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Long trigger = myDate.getTime();
+        Intent intent = new Intent(AssessmentDetail.this, MyReceiver.class);
+        intent.putExtra("key", "Start Date for Assessment: " + editAssessmentName.getText().toString());
+        PendingIntent sender = PendingIntent.getBroadcast(AssessmentDetail.this, MainActivity.numAlert++, intent, PendingIntent.FLAG_IMMUTABLE);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
+        return true;
+    }
+
+    public boolean alertEnd(View view) {
+        String dateFromScreen = editEndDate.getText().toString();
+        Date myDate = null;
+        try {
+            myDate=sdf.parse(dateFromScreen);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Long trigger = myDate.getTime();
+        Intent intent = new Intent(AssessmentDetail.this, MyReceiver.class);
+        intent.putExtra("key", "End Date for Assessment: " + editAssessmentName.getText().toString());
+        PendingIntent sender = PendingIntent.getBroadcast(AssessmentDetail.this, MainActivity.numAlert++, intent, PendingIntent.FLAG_IMMUTABLE);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
+        return true;
     }
 }

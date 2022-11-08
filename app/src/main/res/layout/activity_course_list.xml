@@ -45,7 +45,7 @@
                 android:id="@+id/editTermStart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="MM/DD/YYYY"></EditText>
+                android:hint="MM/DD/YY"></EditText>
 
         </LinearLayout>
 
@@ -63,7 +63,7 @@
                 android:id="@+id/editTermEnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="MM/DD/YYYY"></EditText>
+                android:hint="MM/DD/YY"></EditText>
 
         </LinearLayout>
 
