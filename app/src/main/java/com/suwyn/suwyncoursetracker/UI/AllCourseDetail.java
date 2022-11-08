@@ -146,6 +146,14 @@ public class AllCourseDetail extends AppCompatActivity {
         return true;
     }
 
-    public void shareNote(View view) {
+    public boolean shareNote(View view) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TITLE, "Note from " + editCourseName.getText().toString());
+        sendIntent.putExtra(Intent.EXTRA_TEXT, editNote.getText().toString());
+        sendIntent.setType("text/plain");
+        Intent shareIntent = Intent.createChooser(sendIntent, null);
+        startActivity(shareIntent);
+        return true;
     }
 }
