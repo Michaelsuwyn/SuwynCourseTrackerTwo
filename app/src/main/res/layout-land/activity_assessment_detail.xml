@@ -131,6 +131,16 @@
             android:text="Save">
 
         </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="setAlert"
+            android:text="Set Alert">
+
+        </Button>
+
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"

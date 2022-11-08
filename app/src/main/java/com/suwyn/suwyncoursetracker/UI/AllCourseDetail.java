@@ -99,4 +99,9 @@ public class AllCourseDetail extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void setAlert(View view) {
+        Intent intent = new Intent(AllCourseDetail.this, AlertAndNotify.class);
+        startActivity(intent);
+    }
 }

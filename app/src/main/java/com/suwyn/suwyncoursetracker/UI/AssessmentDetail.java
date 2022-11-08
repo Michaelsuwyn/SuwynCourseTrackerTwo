@@ -76,4 +76,9 @@ public class AssessmentDetail extends AppCompatActivity {
         Intent intent = new Intent(AssessmentDetail.this, AssessmentList.class);
         startActivity(intent);
     }
+
+    public void setAlert(View view) {
+        Intent intent = new Intent(AssessmentDetail.this, AlertAndNotify.class);
+        startActivity(intent);
+    }
 }
